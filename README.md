@@ -22,14 +22,14 @@ Then install all the node modules required
 Now you have all the starter files to get started on your solution. Running `npm run start` will open your project in at `http://localhost:3000`
 
 ### Problem
-The onboarding team at Pobl require a web application that allows a user to create a new starter request. The request form will need to include the following:
+The onboarding team at Pobl require a web application that allows a user to create a new user request. The request form will need to include the following:
 * First and Last names
 * Job Title
 * Line manager
 * Start Date
 * Business Area (IT, Finance, HR, Housing, Care) 
 
-An admin user will also need to access the application to review all the new user requests that have been added. This admin user should have the ability to view each request and either mark it as complete or remove it. We have multiple admin users (one for each business area) who are responsible for their requests in those areas.
+Users would also like to manage each request that has been added. They will want to be able to mark each request as completed, as well as having the ability to remove a request from the list. When managing the requests it will be useful to be able to filter the list by business area and only show ones that havent been already completed.
 
 *Please note: As this is testing only frontend development there is no requirement to access and use a database.*
 
