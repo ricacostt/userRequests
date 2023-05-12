@@ -1,2 +1,4 @@
-# Junior-Web-Dev-Practical
+# Technical Test
+## Junior Web Developer 
+
 Code repo for role practical test
