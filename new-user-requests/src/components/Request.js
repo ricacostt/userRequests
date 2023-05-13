@@ -12,10 +12,10 @@ const Request = ({ request, onDelete }) => {
       <td>{request.startDate}</td>
       <td>{request.businessArea}</td>
       <td>
-        <button type="checkbox">Completed</button>
+        <button request={request} type="checkbox">Completed</button>
       </td>
       <td>
-        <button onClick={()=> onDelete(request.id)} className="btn btn-outline-danger" type="button">Delete</button>
+        <button request={request} onClick={()=> onDelete(request.id)} className="btn btn-outline-danger" type="button">Delete</button>
       </td>
     </tr>
     </tbody>

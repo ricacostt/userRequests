@@ -84,20 +84,20 @@
       "id": 9,
       "firstName": "Dwight",
       "lastName": "Schrute",
-      "jobTitle": "Assistant to the Regional Manager",
+      "jobTitle": "Platform Engineer",
       "lineManager": "Michael Scott",
       "startDate": "2023-01-01",
-      "businessArea": "Sales",
+      "businessArea": "IT",
       "completed": false
     },
     {
       "id": 10,
       "firstName": "Jim",
       "lastName": "Halpert",
-      "jobTitle": "Salesman",
+      "jobTitle": "Business Partner",
       "lineManager": "Dwight Schrute",
       "startDate": "2023-02-01",
-      "businessArea": "Sales",
+      "businessArea": "Finance",
       "completed": false
     },
     {
