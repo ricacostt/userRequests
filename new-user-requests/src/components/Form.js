@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 const Form = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm();
+  const { register, handleSubmit, formState: {errors, isValid} } = useForm();
 
   const onSubmit = (data) => console.log(data);
 
@@ -94,7 +94,7 @@ const Form = () => {
         >
           Close
         </button>
-        <button type="submit" className="btn btn-primary">
+        <button disabled={!isValid} type="submit" className="btn btn-primary">
           Add to List
         </button>
       </div>
