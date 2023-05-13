@@ -2,8 +2,8 @@
     {
       "id": 1,
       "firstName": "Pobl",
-      "lastName": "Developer",
-      "jobTitle": "n/a",
+      "lastName": "Group",
+      "jobTitle": "Developer",
       "lineManager": "Richard Griffiths",
       "startDate": "2023-06-01",
       "businessArea": "IT",
@@ -74,10 +74,10 @@
       "id": 8,
       "firstName": "Pam",
       "lastName": "Beesly",
-      "jobTitle": "Receptionist",
+      "jobTitle": "UX Designer",
       "lineManager": "Jim Halpert",
       "startDate": "2022-12-01",
-      "businessArea": "Admin",
+      "businessArea": "IT",
       "completed": false
     },
     {
