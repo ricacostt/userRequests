@@ -1,6 +1,6 @@
 import React from "react";
 
-const Request = ({ request }) => {
+const Request = ({ request, onDelete }) => {
   return (
     <tbody>
     <tr>
@@ -12,10 +12,10 @@ const Request = ({ request }) => {
       <td>{request.startDate}</td>
       <td>{request.businessArea}</td>
       <td>
-        <button type="checkbox"></button>
+        <button type="checkbox">Completed</button>
       </td>
       <td>
-        <button type="button"></button>
+        <button onClick={()=> onDelete(request.id)} className="btn btn-outline-danger" type="button">Delete</button>
       </td>
     </tr>
     </tbody>
