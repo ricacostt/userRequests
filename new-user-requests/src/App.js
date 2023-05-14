@@ -11,17 +11,6 @@ function App() {
   const [selectedBusinessArea, setSelectedBusinessArea] = useState('')
   const [selectedStatus, setSelectedStatus] = useState('')
 
-  // const visibleRequests = selectedBusinessArea ? requests.filter(request => request.businessArea === selectedBusinessArea ) : requests
-
-  // const visibleRequests = requests.filter((request) => {
-  //   if (selectedBusinessArea && request.businessArea !== selectedBusinessArea) {
-  //     return false;
-  //   }
-  //   if (selectedStatus && request.status !== selectedStatus) {
-  //     return false;
-  //   }
-  //   return true;
-  // });
   const visibleRequests = requests.filter(request => {
     if (selectedBusinessArea && selectedStatus) {
       return request.businessArea === selectedBusinessArea && request.completed === (selectedStatus === "Completed")
@@ -39,12 +28,34 @@ function App() {
       <img src='/pobl-logo.png' className="App-logo" alt="logo" />
       <div className='d-flex flex-column'>
       <div>  
-       <h1 className="text-left pt-5 pb-2">Requests List</h1>
+       <h1 className="text-left pt-5">User Requests</h1>
+       <div className='d-flex flex-row justify-content-between'>
       <div className='mt-5 mb-3'>
       <Filters onSelectBusinessArea={area => setSelectedBusinessArea(area) }
         onSelectStatus={status => setSelectedStatus(status)}
       />
       </div>
+      <div className=" mt-5 mb-3">
+      <button type="button" className="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img className="pe-2" src='./plus-circle.svg' alt='plus icon'></img>
+         New Request
+      </button>
+    </div>
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">New Request</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+       <Form onSubmit={request => setRequests([...requests, {...request, id: requests.length + 1}])}/>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
        {requests ? (
          <div className="table-responsive">
            <table className="table table-bordered">
@@ -70,31 +81,12 @@ function App() {
          <p>Not found</p>
        )}
      </div>
+      </div>
+      <div className='pt-3 pb-3'>
+   
+        <span className="text-muted">© {new Date().getFullYear()} Federica Costantino x Pobl</span>
+      </div>
   
-      <div className="align-self-end pt-3">
-      <button type="button" className="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img className="pe-2" src='./plus-circle.svg' alt='plus icon'></img>
-         New Request
-      </button>
-    </div>
-<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h1 className="modal-title fs-5" id="exampleModalLabel">New Request</h1>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div className="modal-body">
-       <Form onSubmit={request => setRequests([...requests, {...request, id: requests.length + 1}])}/>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      
-      </div>
     </div>
   );
 }

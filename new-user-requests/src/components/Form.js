@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { businessAreas } from "./Filters";
 const Form = ({onSubmit}) => {
-  const { register, handleSubmit, reset, formState: {errors, isValid} } = useForm();
+  const { register, handleSubmit, reset, formState: {errors} } = useForm();
 
   const onSubmitWithData = (data) => {
     const dataWithDefault = { ...data, completed: false };
@@ -21,7 +21,6 @@ const Form = ({onSubmit}) => {
         type="text"
         className="form-control"
       />
-    {/* the optional chaining is needed in case the error object is empty(we can't access the type of firstName if it doesn't exist, we'l have a runtime error) */}
       {errors.firstName?.type === 'required' && <p className="text-danger">The first name field is required.</p>}
      { errors.firstName?.type === 'minLength' && <p className="text-danger">The first name must be at least 2 characters.</p> } 
       <br />
@@ -52,13 +51,13 @@ const Form = ({onSubmit}) => {
         Line Manager
       </label>
       <input
-        {...register("lineManager", { required: true, minLength: 2 })}
+        {...register("lineManager", { required: true, minLength: 4 })}
         id="lineManager"
         type="text"
         className="form-control"
       />
       {errors.lineManager?.type === 'required' && <p className="text-danger">The line manager field is required.</p>}
-     { errors.lineManager?.type === 'minLength' && <p className="text-danger">The line manager must be at least 2 characters.</p> } 
+     { errors.lineManager?.type === 'minLength' && <p className="text-danger">The line manager must be at least 4 characters.</p> } 
       <br />
       <label htmlFor="startDate" className="form-label">
         Start Date
@@ -80,8 +79,8 @@ const Form = ({onSubmit}) => {
         className="form-select"
         aria-label="Default select"
         {...register("businessArea", { required: true })}
-        defaultValue="Choose the business area"
       >
+      <option default value="">Choose Business Area</option>
       {businessAreas.map(area=><option key={area} value={area}>{area}</option>)}
 
       </select>
@@ -95,7 +94,7 @@ const Form = ({onSubmit}) => {
         >
           Close
         </button>
-        <button disabled={!isValid} type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Add to List
         </button>
       </div>
