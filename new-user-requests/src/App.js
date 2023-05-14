@@ -8,18 +8,43 @@ import Form from './components/Form';
 function App() {
   const [requests, setRequests] = useState(requestsData)
 
-  const [selectedCategory, setSelectedCategory] = useState('')
-  const visibleRequests = selectedCategory ? requests.filter(request => request.businessArea === selectedCategory ) : requests
+  const [selectedBusinessArea, setSelectedBusinessArea] = useState('')
+  const [selectedStatus, setSelectedStatus] = useState('')
+
+  // const visibleRequests = selectedBusinessArea ? requests.filter(request => request.businessArea === selectedBusinessArea ) : requests
+
+  // const visibleRequests = requests.filter((request) => {
+  //   if (selectedBusinessArea && request.businessArea !== selectedBusinessArea) {
+  //     return false;
+  //   }
+  //   if (selectedStatus && request.status !== selectedStatus) {
+  //     return false;
+  //   }
+  //   return true;
+  // });
+  const visibleRequests = requests.filter(request => {
+    if (selectedBusinessArea && selectedStatus) {
+      return request.businessArea === selectedBusinessArea && request.completed === (selectedStatus === "Completed")
+    } else if (selectedBusinessArea) {
+      return request.businessArea === selectedBusinessArea
+    } else if (selectedStatus) {
+      return request.completed === (selectedStatus === "Completed")
+    } else {
+      return true
+    }
+  });
 
   return (
     <div className="app">
       <img src='/pobl-logo.png' className="App-logo" alt="logo" />
-      <div className='mt-5'>
-      <Filters onSelectCategory={category => setSelectedCategory(category) }/>
-      </div>
       <div className='d-flex flex-column'>
       <div>  
        <h1 className="text-left pt-5 pb-2">Requests List</h1>
+      <div className='mt-5 mb-3'>
+      <Filters onSelectBusinessArea={area => setSelectedBusinessArea(area) }
+        onSelectStatus={status => setSelectedStatus(status)}
+      />
+      </div>
        {requests ? (
          <div className="table-responsive">
            <table className="table table-bordered">
