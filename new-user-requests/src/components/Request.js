@@ -1,23 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Request = ({ request, onDelete }) => {
+  const [isChecked, setIsChecked] = useState(request.completed);
+  const label = isChecked ? "Completed" : "In Progress";
+  const rowClass = isChecked ? "text-decoration-line-through" :  ""
+
+  const handleCheck = () => {
+    setIsChecked(!isChecked)
+    request.completed = !isChecked
+  }
   return (
     <tbody>
-    <tr>
-      
-      <td>{request.firstName}</td>
-      <td>{request.lastName}</td>
-      <td>{request.jobTitle}</td>
-      <td>{request.lineManager}</td>
-      <td>{request.startDate}</td>
-      <td>{request.businessArea}</td>
-      <td>
-        <button request={request} type="checkbox">Completed</button>
-      </td>
-      <td>
-        <button request={request} onClick={()=> onDelete(request.id)} className="btn btn-outline-danger" type="button">Delete</button>
-      </td>
-    </tr>
+      <tr className={rowClass}>
+        <td>{request.firstName}</td>
+        <td>{request.lastName}</td>
+        <td>{request.jobTitle}</td>
+        <td>{request.lineManager}</td>
+        <td>{request.startDate}</td>
+        <td>{request.businessArea}</td>
+        <td>
+          <div className="form-check">
+            <input
+              request={request}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id={request.id}
+              checked={isChecked}
+              onChange={handleCheck}
+            />
+            <label className="form-check-label" htmlFor={request.id}>
+              {label}
+            </label>
+          </div>
+        </td>
+        <td>
+          <button
+            request={request}
+            onClick={() => onDelete(request.id)}
+            className="btn btn-outline-danger"
+            type="button"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
     </tbody>
   );
 };

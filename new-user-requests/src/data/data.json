@@ -38,7 +38,7 @@
       "lineManager": "Sarah Lee",
       "startDate": "2022-08-01",
       "businessArea": "HR",
-      "completed": false
+      "completed": true
     },
     {
       "id": 5,
@@ -88,7 +88,7 @@
       "lineManager": "Michael Scott",
       "startDate": "2023-01-01",
       "businessArea": "IT",
-      "completed": false
+      "completed": true
     },
     {
       "id": 10,
@@ -109,6 +109,57 @@
       "startDate": "2023-03-01",
       "businessArea": "Finance",
       "completed": false
+    },
+    {
+      "id": 12,
+      "firstName": "Michael",
+      "lastName": "Scott",
+      "jobTitle": "Regional Manager",
+      "lineManager": "David Wallace",
+      "startDate": "2022-01-05",
+      "businessArea": "HR",
+      "completed": true
+    },
+    {
+      "id": 13,
+      "firstName": "Dwight",
+      "lastName": "Schrute",
+      "jobTitle": "Assistant to the Regional Manager",
+      "lineManager": "Michael Scott",
+      "startDate": "2022-06-15",
+      "businessArea": "IT",
+      "completed": false
+    },
+    {
+      "id": 14,
+      "firstName": "Pam",
+      "lastName": "Beesly",
+      "jobTitle": "Receptionist",
+      "lineManager": "Jim Halpert",
+      "startDate": "2022-09-01",
+      "businessArea": "Housing",
+      "completed": false
+    },
+    {
+      "id": 15,
+      "firstName": "Jim",
+      "lastName": "Halpert",
+      "jobTitle": "Sales Representative",
+      "lineManager": "Jan Levinson",
+      "startDate": "2023-01-10",
+      "businessArea": "Finance",
+      "completed": true
+    },
+    {
+      "id": 16,
+      "firstName": "Andy",
+      "lastName": "Bernard",
+      "jobTitle": "Sales Director",
+      "lineManager": "David Wallace",
+      "startDate": "2022-04-01",
+      "businessArea": "Care",
+      "completed": false
     }
+    
   ]
   
