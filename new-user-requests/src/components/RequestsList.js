@@ -2,11 +2,12 @@ import React, {useState} from "react";
 import requestsData from "../data/data.json";
 import Request from "./Request";
 import Filters from "./Filters";
+import Button from "./Button";
 
 const RequestsList = () => {
   const [selectedCategory, setSelectedCategory] = useState('')
-
   const [requests, setRequests] = useState(requestsData)
+
   const visibleRequests = selectedCategory ? requests.filter(request => request.businessArea === selectedCategory ) : requests
   return (
     <div>
@@ -30,7 +31,7 @@ const RequestsList = () => {
 
               </tr>
             </thead>
-              {/* The onDelete function takes an id parameter, which represents the unique identifier of the request to be deleted. The function first filters the requests array to remove the request with the matching id. It does this by using the filter function, which takes an arrow function that returns true for every element that should be kept in the array, and false for elements that should be removed. */}
+              {/* The onDelete function first filters the requests array to remove the request with the matching id, by using the filter function, which takes an arrow function that returns true for every element that should be kept in the array, and false for elements that should be removed. */}
             {visibleRequests.map((request) => (
               <Request request={request} key={request.id} onDelete={(id)=> setRequests(requests.filter((request)=> request.id !== id))}/>
             ))}
@@ -39,6 +40,7 @@ const RequestsList = () => {
       ) : (
         <p>Not found</p>
       )}
+      
     </div>
   );
 };

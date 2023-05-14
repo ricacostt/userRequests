@@ -2,6 +2,11 @@
     width: 14rem;
 }
 
+@media (max-width: 450px) {
+    .App-logo {
+      width: 8rem;
+    }
+  }
 .app {
     /* display: flex;
     flex-direction: column;

@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { businessAreas } from "./Filters";
 const Form = () => {
   const { register, handleSubmit, formState: {errors, isValid} } = useForm();
 
@@ -78,11 +79,8 @@ const Form = () => {
         {...register("businessArea", { required: true })}
         defaultValue="Choose the business area"
       >
-        <option value="IT">IT</option>
-        <option value="Finance">Finance</option>
-        <option value="HR">HR</option>
-        <option value="Housing">Housing</option>
-        <option value="Care">Care</option>
+      {businessAreas.map(area=><option key={area} value={area}>{area}</option>)}
+
       </select>
       {errors.businessArea?.type === 'required' && <p className="text-danger">The business area field is required</p>}
 
