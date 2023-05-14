@@ -3,9 +3,10 @@ import React, { useState } from "react";
 const Request = ({ request, onDelete }) => {
   const [isChecked, setIsChecked] = useState(false);
   const label = isChecked ? "Completed" : "In Progress";
+  const rowClass = isChecked ? "text-decoration-line-through" :  ""
   return (
     <tbody>
-      <tr>
+      <tr className={rowClass}>
         <td>{request.firstName}</td>
         <td>{request.lastName}</td>
         <td>{request.jobTitle}</td>
