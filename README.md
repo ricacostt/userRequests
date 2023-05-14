@@ -1,51 +1,40 @@
-# Technical Test
-## Junior Web Developer 
+# User Requests Website
 
-### Overview
-Congratulations on making it to the technical interview for the **Junior Web Developer** role here at Pobl. 
+## 📝 Plan and Design
+Visit [Figma page](https://www.figma.com/file/EMaaB1IpG24GH7XsMGFCBm/User-Requests?type=design&node-id=0%3A1&t=diVVGEHQeYDNiCOS-1)
 
-This document contains the information needed to complete the technical task required for this role and will be reviewed by the Applications team. If your solution is successful and meets our requirements, you will be invited to a second interview (in person or virtual). As part your interview you will be required to show and discuss your work and ask us any questions you may have about the role.
+## 👉 The website
+The website allow users to create new user requests, including:
+- first and last names
+- job title
+- line manager
+- start date
+- business area
 
-### To Get Started
-Firstly you'll want to copy this repo
+Users can:
+- mark each request has completed
+- remove a request from the list
+- filter the list by business area
+- filter the list by 'completed' or/and 'in progress'
 
-`git clone`
+## Tech Stack
+- Javascript
+- React.js
+- Bootstrap v5
+- Figma
 
-Ensure that you go into the folder labelled new-user-requests 
+## Run Locally
 
-`cd new-user-requests`
+Clone the repo
+```git clone https://github.com/ricacostt/userRequests.git```
 
-Then install all the node modules required
+Navigate into the folder labelled 
+```cd new-user-requests```
 
-`npm install`
+Install node modules required
+```npm i```
 
-Now you have all the starter files to get started on your solution. Running `npm run start` will open your project in at `http://localhost:3000`
+Runs the app in the development mode.
+```npm run start``` 
 
-### Problem
-The onboarding team at Pobl require a web application that allows a user to create a new user request. The request form will need to include the following:
-* First and Last names
-* Job Title
-* Line manager
-* Start Date
-* Business Area (IT, Finance, HR, Housing, Care) 
-
-Users would also like to manage each request that has been added. They will want to be able to mark each request as completed, as well as having the ability to remove a request from the list. When managing the requests it will be useful to be able to filter the list by business area and only show ones that havent been already completed.
-
-*Please note: As this is testing only frontend development there is no requirement to access and use a database.*
-
-Things to note:
-*	Must use React (starting project)
-*	Can use your own preferred styling (Tailwindcss, Styled Components, CSS, SASS) 
-*	Assume any user can use this app (not required to set up user authentication)
-*	No need to deploy your solution
-
-### Submission
-You have 5 days to complete and provide a solution to the problem above. All submissions should be uploaded into a public GitHub repository with a link emailed to:
-
-liam.moseley@poblgroup.co.uk
-
-rich.griffiths@poblgroup.co.uk
-
-If you have any questions about the technical test, please feel free to get in touch with Liam or Richard (emails above).
-
-Best of luck! 
+Visit it at `http://localhost:3000`
