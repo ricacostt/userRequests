@@ -17,13 +17,13 @@ Users can:
 - filter the list by business area
 - filter the list by 'completed' or/and 'in progress'
 
-## Tech Stack
+## 💻 Tech Stack
 - Javascript
 - React.js
 - Bootstrap v5
 - Figma
 
-## Run Locally
+## 👀 Run Locally
 
 Clone the repo
 ```git clone https://github.com/ricacostt/userRequests.git```
