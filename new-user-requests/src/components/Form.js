@@ -2,11 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { businessAreas } from "./Filters";
 const Form = ({onSubmit}) => {
-  const { register, handleSubmit, formState: {errors, isValid} } = useForm();
+  const { register, handleSubmit, reset, formState: {errors, isValid} } = useForm();
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(data => {
+      onSubmit(data);
+      reset()
+    })}>
       <div className="mb-3"> </div>
       <label htmlFor="firstName" className="form-label">
         First Name
