@@ -19,11 +19,11 @@ const Request = ({ request, onDelete }) => {
               className="form-check-input"
               type="checkbox"
               value=""
-              id="flexCheckDefault"
+              id={request.id}
               checked={isChecked}
               onChange={()=>setIsChecked(!isChecked)}
             />
-            <label className="form-check-label" htmlFor="flexCheckDefault">
+            <label className="form-check-label" htmlFor={request.id}>
               {label}
             </label>
           </div>
