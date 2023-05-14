@@ -4,12 +4,13 @@ import { businessAreas } from "./Filters";
 const Form = ({onSubmit}) => {
   const { register, handleSubmit, reset, formState: {errors, isValid} } = useForm();
 
-
+  const onSubmitWithData = (data) => {
+    const dataWithDefault = { ...data, completed: false };
+    onSubmit(dataWithDefault);
+    reset();
+  }
   return (
-    <form onSubmit={handleSubmit(data => {
-      onSubmit(data);
-      reset()
-    })}>
+    <form onSubmit={handleSubmit(onSubmitWithData)}>
       <div className="mb-3"> </div>
       <label htmlFor="firstName" className="form-label">
         First Name
