@@ -7,7 +7,7 @@
       "lineManager": "Richard Griffiths",
       "startDate": "2023-06-01",
       "businessArea": "IT",
-      "completed": true
+      "completed": false
     },
   
     {
@@ -18,7 +18,7 @@
       "lineManager": "Jane Smith",
       "startDate": "2022-06-01",
       "businessArea": "IT",
-      "completed": true
+      "completed": false
     },
     {
       "id": 3,

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
 const Request = ({ request, onDelete }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(request.completed);
   const label = isChecked ? "Completed" : "In Progress";
   const rowClass = isChecked ? "text-decoration-line-through" :  ""
+
+  const handleCheck = () => {
+    setIsChecked(!isChecked)
+    request.completed = !isChecked
+  }
   return (
     <tbody>
       <tr className={rowClass}>
@@ -22,7 +27,7 @@ const Request = ({ request, onDelete }) => {
               value=""
               id={request.id}
               checked={isChecked}
-              onChange={()=>setIsChecked(!isChecked)}
+              onChange={handleCheck}
             />
             <label className="form-check-label" htmlFor={request.id}>
               {label}
