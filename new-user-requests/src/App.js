@@ -56,7 +56,7 @@ function App() {
   </div>
 </div>
 </div>
-       {requests ? (
+       {visibleRequests.length > 0 ? (
          <div className="table-responsive">
            <table className="table table-bordered">
              <thead className="thead-light">
@@ -78,7 +78,7 @@ function App() {
            </table>{" "}
          </div>
        ) : (
-         <p>Not found</p>
+         <p>No Requests found matching the selected criteria. Please, select other filter options.</p>
        )}
      </div>
       </div>

@@ -1,17 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import { businessAreas } from "./Filters";
 const Form = ({onSubmit}) => {
   const { register, handleSubmit, reset, formState: {errors} } = useForm();
+  const [showAlert, setShowAlert] = useState(false)
 
   const onSubmitWithData = (data) => {
     const dataWithDefault = { ...data, completed: false };
     onSubmit(dataWithDefault);
     reset();
+    setShowAlert(true)
   }
+
+  const onCloseAlert = () => {
+    setShowAlert(false)
+  };
+
   return (
+    <>
+    {showAlert && (
+      <div className='alert alert-success alert-dismissible fade show' role='alert'>New Request added successfully!
+      <button type='button' className="btn-close" aria-label="Close" onClick={onCloseAlert}></button></div>
+    ) }
     <form onSubmit={handleSubmit(onSubmitWithData)}>
-      <div className="mb-3"> </div>
       <label htmlFor="firstName" className="form-label">
         First Name
       </label>
@@ -97,8 +108,10 @@ const Form = ({onSubmit}) => {
         <button type="submit" className="btn btn-primary">
           Add to List
         </button>
+        
       </div>
     </form>
+    </>
   );
 };
 
